@@ -29,7 +29,7 @@ module Mopidy
     end
 
     def self.add(track)
-      json = Mopidy.format_json(1, 'core.tracklist.add', 'uri': track[:uri])
+      json = Mopidy.format_json(1, 'core.tracklist.add', 'uris': [track[:uri]])
       Mopidy.post(json)
     end
 
@@ -40,6 +40,26 @@ module Mopidy
 
     def self.clear
       json = Mopidy.format_json(1, 'core.tracklist.clear')
+      Mopidy.post(json)
+    end
+
+    def self.repeat
+      json = Mopidy.format_json(1, 'core.tracklist.get_repeat')
+      Mopidy.post(json)
+    end
+
+    def self.repeat=(value)
+      json = Mopidy.format_json(1, 'core.tracklist.set_repeat', [!!value])
+      Mopidy.post(json)
+    end
+
+    def self.single
+      json = Mopidy.format_json(1, 'core.tracklist.get_single')
+      Mopidy.post(json)
+    end
+
+    def self.single=(value)
+      json = Mopidy.format_json(1, 'core.tracklist.set_single', [!!value])
       Mopidy.post(json)
     end
   end
