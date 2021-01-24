@@ -106,48 +106,48 @@ This is the module that interfaces with [Mopidy's Playback controller](https://d
 
 To play:
 ```ruby
-Mopidy::Playlist.play
+Mopidy::Playback.play
 ```
 
 To pause:
 ```ruby
-Mopidy::Playlist.pause
+Mopidy::Playback.pause
 ```
 
 To resume:
 ```ruby
-Mopidy::Playlist.resume
+Mopidy::Playback.resume
 ```
 
 To stop:
 ```ruby
-Mopidy::Playlist.stop
+Mopidy::Playback.stop
 ```
 
 To get the playback state:
 ```ruby
-Mopidy::Playlist.state
+Mopidy::Playback.state
 ```
 
 To get the current time position:
 ```ruby
-Mopidy::Playlist.time_position
+Mopidy::Playback.time_position
 ```
 
 To seek to a time position:
 ```ruby
 time_position = 1000 # Time position in milliseconds
-Mopidy::Playlist.seek(time_position)
+Mopidy::Playback.seek(time_position)
 ```
 
 To get the currently playing track:
 ```ruby
-Mopidy::Playlist.current_track
+Mopidy::Playback.current_track
 ```
 
 To skip to the next track:
 ```ruby
-Mopidy::Playlist.next
+Mopidy::Playback.next
 ```
 
 ## Development
