@@ -12,11 +12,11 @@ module Mopidy
       has_error?(@response) ? parse_error(@response) : parse_response(@response)
     end
 
-    private
-
-    def has_error?(response)
+    def has_error?(response=@response)
       response.parsed_response['result'].nil?
     end
+    
+    private
 
     def parse_response(response)
       response.parsed_response['result']
