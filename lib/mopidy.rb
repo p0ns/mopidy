@@ -41,6 +41,6 @@ module Mopidy
   def self.post(body)
     headers = { 'Content-Type' => 'application/json' }
     res = Http.post(configuration.mopidy_url, body, headers)
-    res.has_error? ? res.body: nil
+    res.has_error? ? nil: res.body
   end
 end
